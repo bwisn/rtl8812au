@@ -185,12 +185,12 @@ endif
 
 ifeq ($(CONFIG_RTL8812A)_$(CONFIG_RTL8821A)_$(CONFIG_RTL8814A), y_y_y)
 
-EXTRA_CFLAGS += -DDRV_NAME=\"rtl88XXau\"
+EXTRA_CFLAGS += -DDRV_NAME=\"rtl88XXau_wfb\"
 ifeq ($(CONFIG_USB_HCI), y)
 USER_MODULE_NAME = 88XXau
 endif
 else
-EXTRA_CFLAGS += -DDRV_NAME=\"rtl8812au\"
+EXTRA_CFLAGS += -DDRV_NAME=\"rtl8812au_wfb\"
 endif
 
 _OS_INTFS_FILES :=	os_dep/osdep_service.o \
@@ -1651,7 +1651,7 @@ endif
 
 USER_MODULE_NAME ?=
 ifneq ($(USER_MODULE_NAME),)
-MODULE_NAME := $(USER_MODULE_NAME)
+MODULE_NAME := $(USER_MODULE_NAME)_wfb
 endif
 
 ifneq ($(KERNELRELEASE),)
